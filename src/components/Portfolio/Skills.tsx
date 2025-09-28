@@ -22,7 +22,7 @@ const skillCategories = [
       { name: "HTML5/CSS3", level: "Expert" },
       { name: "JavaScript/TypeScript", level: "Avancé" },
       { name: "Tailwind CSS", level: "Avancé" },
-      { name: "Flutter", level: "Intermédiaire" }
+      { name: "Responsive Design", level: "Avancé" }
     ]
   },
   {
@@ -34,8 +34,8 @@ const skillCategories = [
       { name: "Django", level: "Avancé" },
       { name: "Java", level: "Avancé" },
       { name: "Python", level: "Avancé" },
-      { name: "Rust", level: "Intermédiaire" },
-      { name: "REST API", level: "Expert" }
+      { name: "REST API", level: "Expert" },
+      { name: "Microservices", level: "Intermédiaire" }
     ]
   },
   {
@@ -44,10 +44,10 @@ const skillCategories = [
     color: "from-accent to-accent-glow",
     skills: [
       { name: "React Native", level: "Avancé" },
-      { name: "Flutter", level: "Intermédiaire" },
       { name: "Android Studio", level: "Avancé" },
       { name: "Java Android", level: "Avancé" },
-      { name: "Cross-platform", level: "Avancé" }
+      { name: "Cross-platform", level: "Avancé" },
+      { name: "Mobile UI/UX", level: "Avancé" }
     ]
   },
   {
@@ -63,39 +63,15 @@ const skillCategories = [
     ]
   },
   {
-    title: "Blockchain & Web3",
-    icon: <Coins className="w-6 h-6" />,
-    color: "from-secondary to-primary",
-    skills: [
-      { name: "Web3.js", level: "Intermédiaire" },
-      { name: "Solana", level: "Intermédiaire" },
-      { name: "Anchor Framework", level: "Débutant" },
-      { name: "Smart Contracts", level: "Débutant" },
-      { name: "DeFi", level: "Débutant" }
-    ]
-  },
-  {
-    title: "Intelligence Artificielle",
-    icon: <Brain className="w-6 h-6" />,
-    color: "from-accent to-secondary",
-    skills: [
-      { name: "Machine Learning", level: "Intermédiaire" },
-      { name: "NLP", level: "Débutant" },
-      { name: "Speech Recognition", level: "Intermédiaire" },
-      { name: "Data Analysis", level: "Intermédiaire" },
-      { name: "Python AI", level: "Intermédiaire" }
-    ]
-  },
-  {
     title: "Outils & DevOps",
     icon: <Wrench className="w-6 h-6" />,
     color: "from-primary to-secondary",
     skills: [
       { name: "Git/GitHub", level: "Avancé" },
-      { name: "Docker", level: "Intermédiaire" },
-      { name: "Linux", level: "Intermédiaire" },
       { name: "VS Code", level: "Expert" },
-      { name: "Figma", level: "Intermédiaire" }
+      { name: "Linux", level: "Intermédiaire" },
+      { name: "Maven/Gradle", level: "Intermédiaire" },
+      { name: "Postman", level: "Avancé" }
     ]
   },
   {

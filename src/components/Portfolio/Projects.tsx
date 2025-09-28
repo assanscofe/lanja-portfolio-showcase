@@ -1,68 +1,48 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Smartphone, Globe, Coins, FileText, Music, Gamepad2 } from "lucide-react";
+import { ExternalLink, Github, Smartphone, Globe, FileText, Server } from "lucide-react";
 
 const projects = [
   {
     id: 1,
-    title: "Application de Gestion de Cryptomonnaies",
-    description: "Application mobile complète pour gérer et suivre les cryptomonnaies avec intégration blockchain.",
-    technologies: ["React Native", "Web3.js", "Solana", "Rust", "Anchor", "Spring Boot"],
-    icon: <Coins className="w-6 h-6" />,
-    category: "Mobile & Blockchain",
-    year: "2025",
+    title: "Système de Gestion des Procédures",
+    description: "Application web complète pour la gestion et le suivi des dossiers administratifs au Ministère avec interface moderne.",
+    technologies: ["Spring Boot", "Java", "PostgreSQL", "Thymeleaf", "HTML/CSS"],
+    icon: <FileText className="w-6 h-6" />,
+    category: "Web Application",
+    year: "2021",
     color: "from-primary to-primary-glow"
   },
   {
     id: 2,
-    title: "Système de Gestion des Procédures",
-    description: "Application web pour la gestion et le suivi des dossiers administratifs au Ministère.",
-    technologies: ["Spring Boot", "Java", "PostgreSQL", "Thymeleaf"],
-    icon: <FileText className="w-6 h-6" />,
-    category: "Web Application",
-    year: "2021",
+    title: "Réseau Social Web",
+    description: "Plateforme sociale moderne avec fonctionnalités de partage, interactions en temps réel et design responsive.",
+    technologies: ["React.js", "Django", "REST API", "PostgreSQL", "JavaScript"],
+    icon: <Globe className="w-6 h-6" />,
+    category: "Full Stack",
+    year: "2023",
     color: "from-secondary to-secondary-glow"
   },
   {
     id: 3,
-    title: "Réseau Social Web",
-    description: "Plateforme sociale moderne avec fonctionnalités de partage et interactions en temps réel.",
-    technologies: ["React.js", "Django", "REST API", "PostgreSQL"],
-    icon: <Globe className="w-6 h-6" />,
-    category: "Full Stack",
-    year: "2023",
+    title: "Application Mobile de Gestion",
+    description: "Application mobile cross-platform pour la gestion de données avec interface intuitive et synchronisation.",
+    technologies: ["React Native", "SQLite", "Android Studio", "JavaScript"],
+    icon: <Smartphone className="w-6 h-6" />,
+    category: "Mobile",
+    year: "2022",
     color: "from-accent to-accent-glow"
   },
   {
     id: 4,
-    title: "Lecteur de Musique Mobile",
-    description: "Application mobile intuitive pour l'écoute et la gestion de bibliothèques musicales.",
-    technologies: ["Flutter", "Dart", "Android Studio", "SQLite"],
-    icon: <Music className="w-6 h-6" />,
-    category: "Mobile",
-    year: "2022",
-    color: "from-primary to-secondary"
-  },
-  {
-    id: 5,
-    title: "Assistante Vocale Mobile",
-    description: "Application d'assistance vocale avec reconnaissance et traitement de la parole.",
-    technologies: ["React Native", "Django", "Speech Recognition", "NLP"],
-    icon: <Smartphone className="w-6 h-6" />,
-    category: "Mobile & IA",
-    year: "2021",
-    color: "from-secondary to-accent"
-  },
-  {
-    id: 6,
-    title: "Jeu 2D Police/Voleur",
-    description: "Jeu interactif en 2D avec mécaniques de poursuite et stratégie en temps réel.",
-    technologies: ["Python", "Pygame", "Game Logic", "2D Graphics"],
-    icon: <Gamepad2 className="w-6 h-6" />,
-    category: "Game Development",
-    year: "2020",
-    color: "from-accent to-primary"
+    title: "API REST E-commerce",
+    description: "API robuste pour plateforme e-commerce avec gestion des commandes, paiements et inventaire.",
+    technologies: ["Spring Boot", "Java", "MySQL", "REST API", "Maven"],
+    icon: <Server className="w-6 h-6" />,
+    category: "Backend",
+    year: "2023",
+    color: "from-primary to-accent"
   }
 ];
 

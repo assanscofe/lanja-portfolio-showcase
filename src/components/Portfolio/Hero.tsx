@@ -36,13 +36,13 @@ export function Hero() {
               <span className="text-foreground">Nilaina</span>
             </h1>
             <h2 className="text-xl md:text-2xl text-muted-foreground font-medium">
-              Développeur Web & Mobile – Blockchain & IA
+              Développeur Web & Mobile – Full Stack
             </h2>
           </div>
 
           {/* Description */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Je conçois des applications modernes et sécurisées en React Native, Spring Boot et Blockchain
+            Je conçois des applications web et mobiles modernes avec React, React Native et Spring Boot
           </p>
 
           {/* Social Links */}
