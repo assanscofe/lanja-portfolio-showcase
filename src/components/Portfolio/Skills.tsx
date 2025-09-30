@@ -5,7 +5,6 @@ import {
   Smartphone, 
   Server, 
   Database, 
-  Coins, 
   Wrench,
   Brain,
   Globe
@@ -13,75 +12,73 @@ import {
 
 const skillCategories = [
   {
-    title: "Frontend",
+    title: "Langages",
     icon: <Code2 className="w-6 h-6" />,
     color: "from-primary to-primary-glow",
     skills: [
-      { name: "React.js", level: "Avancé" },
-      { name: "React Native", level: "Avancé" },
+      { name: "JavaScript", level: "Avancé" },
+      { name: "PHP", level: "Avancé" },
+      { name: "Java", level: "Avancé" },
       { name: "HTML5/CSS3", level: "Expert" },
-      { name: "JavaScript/TypeScript", level: "Avancé" },
-      { name: "Tailwind CSS", level: "Avancé" },
+      { name: "SQL", level: "Avancé" }
+    ]
+  },
+  {
+    title: "Frontend",
+    icon: <Globe className="w-6 h-6" />,
+    color: "from-secondary to-secondary-glow",
+    skills: [
+      { name: "React.js", level: "Avancé" },
+      { name: "JavaScript", level: "Avancé" },
+      { name: "HTML5/CSS3", level: "Expert" },
+      { name: "Bootstrap", level: "Avancé" },
       { name: "Responsive Design", level: "Avancé" }
     ]
   },
   {
     title: "Backend",
     icon: <Server className="w-6 h-6" />,
-    color: "from-secondary to-secondary-glow",
+    color: "from-accent to-accent-glow",
     skills: [
+      { name: "Laravel", level: "Avancé" },
+      { name: "CodeIgniter", level: "Avancé" },
       { name: "Spring Boot", level: "Avancé" },
-      { name: "Django", level: "Avancé" },
-      { name: "Java", level: "Avancé" },
-      { name: "Python", level: "Avancé" },
-      { name: "REST API", level: "Expert" },
-      { name: "Microservices", level: "Intermédiaire" }
+      { name: "REST API", level: "Avancé" },
+      { name: "Thymeleaf", level: "Intermédiaire" }
     ]
   },
   {
     title: "Mobile",
     icon: <Smartphone className="w-6 h-6" />,
-    color: "from-accent to-accent-glow",
+    color: "from-primary to-secondary",
     skills: [
       { name: "React Native", level: "Avancé" },
       { name: "Android Studio", level: "Avancé" },
       { name: "Java Android", level: "Avancé" },
-      { name: "Cross-platform", level: "Avancé" },
-      { name: "Mobile UI/UX", level: "Avancé" }
+      { name: "SQLite", level: "Avancé" }
     ]
   },
   {
     title: "Base de données",
     icon: <Database className="w-6 h-6" />,
-    color: "from-primary to-accent",
+    color: "from-secondary to-accent",
     skills: [
       { name: "PostgreSQL", level: "Avancé" },
       { name: "MySQL", level: "Avancé" },
       { name: "SQLite", level: "Avancé" },
-      { name: "MongoDB", level: "Intermédiaire" },
       { name: "SQL", level: "Expert" }
     ]
   },
   {
-    title: "Outils & DevOps",
+    title: "Outils",
     icon: <Wrench className="w-6 h-6" />,
-    color: "from-primary to-secondary",
+    color: "from-primary to-accent",
     skills: [
       { name: "Git/GitHub", level: "Avancé" },
       { name: "VS Code", level: "Expert" },
-      { name: "Linux", level: "Intermédiaire" },
-      { name: "Maven/Gradle", level: "Intermédiaire" },
+      { name: "Android Studio", level: "Avancé" },
+      { name: "Maven", level: "Intermédiaire" },
       { name: "Postman", level: "Avancé" }
-    ]
-  },
-  {
-    title: "Langues",
-    icon: <Globe className="w-6 h-6" />,
-    color: "from-secondary to-accent",
-    skills: [
-      { name: "Malagasy", level: "Natif" },
-      { name: "Français", level: "Courant" },
-      { name: "Anglais", level: "Intermédiaire" }
     ]
   }
 ];

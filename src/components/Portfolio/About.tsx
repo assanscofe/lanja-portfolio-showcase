@@ -18,20 +18,20 @@ export function About() {
             <div className="prose prose-lg max-w-none text-muted-foreground leading-relaxed">
               <p className="text-lg md:text-xl">
                 <strong className="gradient-text">Titulaire d'un Master 2 en Informatique de Gestion</strong> spécialisé en Génie Logiciel et Intelligence Artificielle, 
-                je suis passionné par l'innovation numérique et les technologies émergentes.
+                je suis passionné par le développement d'applications web et mobiles performantes.
               </p>
               
               <p className="text-base md:text-lg">
-                Mon expertise couvre le développement d'applications web et mobiles modernes, 
+                Mon expertise couvre le développement full-stack d'applications web et mobiles modernes, 
                 avec une solide expérience en collaboration au sein d'équipes multidisciplinaires. 
-                Je maîtrise particulièrement les technologies blockchain et l'intégration d'intelligence artificielle 
-                dans les solutions applicatives.
+                Je maîtrise particulièrement la création d'interfaces utilisateur intuitives et le développement 
+                d'API REST robustes.
               </p>
 
               <p className="text-base md:text-lg">
-                Polyglotte technique, je travaille aussi bien sur le frontend (React, React Native, Flutter) 
-                que sur le backend (Spring Boot, Django, Rust), avec une spécialisation émergente 
-                dans les technologies Web3 et blockchain.
+                Polyvalent techniquement, je travaille aussi bien sur le frontend (React, React Native, JavaScript) 
+                que sur le backend (PHP avec Laravel et CodeIgniter, Java avec Spring Boot), 
+                avec une forte capacité d'adaptation aux différents environnements de développement.
               </p>
             </div>
 
@@ -42,7 +42,7 @@ export function About() {
                 className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
                 asChild
               >
-                <a href="/cv-lanja-nilaina.pdf" download>
+                <a href="/CvTest.pdf" download="CV_Lanja_Andriatsiferana.pdf">
                   <Download className="w-5 h-5 mr-2" />
                   Télécharger mon CV
                 </a>
