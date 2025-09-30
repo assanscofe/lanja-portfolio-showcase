@@ -27,46 +27,58 @@ import CryptoImg18 from "@/assets/IMG-20250908-WA0018.jpg";
 const projects = [
   {
     id: 1,
+    title: "Anime Sparkle",
+    description: "Application web moderne de découverte d'animés avec recherche avancée, système de favoris et interface utilisateur élégante.",
+    technologies: ["React.js", "TypeScript", "API REST", "Tailwind CSS"],
+    icon: <Globe className="w-6 h-6" />,
+    category: "Web Application",
+    year: "2024",
+    color: "from-primary to-primary-glow",
+    screenshots: [],
+    liveUrl: "https://anime-sparkle.vercel.app/"
+  },
+  {
+    id: 2,
     title: "Système de Gestion des Procédures",
     description: "Application web complète pour la gestion et le suivi des dossiers administratifs au Ministère avec interface moderne.",
     technologies: ["Spring Boot", "Java", "PostgreSQL", "Thymeleaf", "HTML/CSS"],
     icon: <FileText className="w-6 h-6" />,
     category: "Web Application",
     year: "2021",
-    color: "from-primary to-primary-glow",
+    color: "from-secondary to-secondary-glow",
     screenshots: []
   },
   {
-    id: 2,
+    id: 3,
     title: "Réseau Social Web",
     description: "Plateforme sociale moderne avec fonctionnalités de partage, interactions en temps réel et design responsive.",
     technologies: ["React.js", "Django", "REST API", "PostgreSQL", "JavaScript"],
     icon: <Globe className="w-6 h-6" />,
     category: "Full Stack",
     year: "2023",
-    color: "from-secondary to-secondary-glow",
+    color: "from-accent to-accent-glow",
     screenshots: [ReseauSociauxImg]
   },
   {
-    id: 3,
+    id: 4,
     title: "Application Mobile de Gestion",
     description: "Application mobile cross-platform pour la gestion de données avec interface intuitive et synchronisation.",
     technologies: ["React Native", "SQLite", "Android Studio", "JavaScript"],
     icon: <Smartphone className="w-6 h-6" />,
     category: "Mobile",
     year: "2022",
-    color: "from-accent to-accent-glow",
+    color: "from-primary to-accent",
     screenshots: []
   },
   {
-    id: 4,
+    id: 5,
     title: "Application Crypto Mobile",
     description: "Application mobile de gestion de cryptomonnaies avec suivi en temps réel, portefeuille et analyses de marché.",
     technologies: ["React Native", "API REST", "SQLite", "JavaScript"],
     icon: <Smartphone className="w-6 h-6" />,
     category: "Mobile",
     year: "2023",
-    color: "from-primary to-accent",
+    color: "from-secondary to-accent",
     screenshots: [
       CryptoImg1, CryptoImg2, CryptoImg3, CryptoImg4, CryptoImg5, CryptoImg6,
       CryptoImg7, CryptoImg8, CryptoImg9, CryptoImg10, CryptoImg11, CryptoImg12,
@@ -226,6 +238,18 @@ export function Projects() {
                         </div>
                       </DialogContent>
                     </Dialog>
+                  ) : project.liveUrl ? (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 hover:shadow-glow transition-all duration-300"
+                      asChild
+                    >
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" />
+                        Voir le site
+                      </a>
+                    </Button>
                   ) : (
                     <Button
                       variant="outline"
