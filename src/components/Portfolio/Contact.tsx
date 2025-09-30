@@ -155,7 +155,7 @@ export function Contact() {
                     className="glass-effect hover:shadow-glow transition-all duration-300 hover:bg-primary/10 mb-4 w-full"
                   >
                     <a 
-                      href="/Modern Professional CV Resume.pdf" 
+                      href="/CvTest.pdf" 
                       download="CV_Lanja_Andriatsiferana.pdf"
                       target="_blank"
                       rel="noopener noreferrer"

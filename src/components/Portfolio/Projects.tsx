@@ -1,7 +1,28 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Smartphone, Globe, FileText, Server } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { ExternalLink, Github, Smartphone, Globe, FileText, Server, Image as ImageIcon } from "lucide-react";
+import ReseauSociauxImg from "@/assets/ReseauSociaux.jpeg";
+import CryptoImg1 from "@/assets/IMG-20250908-WA0001.jpg";
+import CryptoImg2 from "@/assets/IMG-20250908-WA0002.jpg";
+import CryptoImg3 from "@/assets/IMG-20250908-WA0003.jpg";
+import CryptoImg4 from "@/assets/IMG-20250908-WA0004.jpg";
+import CryptoImg5 from "@/assets/IMG-20250908-WA0005.jpg";
+import CryptoImg6 from "@/assets/IMG-20250908-WA0006.jpg";
+import CryptoImg7 from "@/assets/IMG-20250908-WA0007.jpg";
+import CryptoImg8 from "@/assets/IMG-20250908-WA0008.jpg";
+import CryptoImg9 from "@/assets/IMG-20250908-WA0009.jpg";
+import CryptoImg10 from "@/assets/IMG-20250908-WA0010.jpg";
+import CryptoImg11 from "@/assets/IMG-20250908-WA0011.jpg";
+import CryptoImg12 from "@/assets/IMG-20250908-WA0012.jpg";
+import CryptoImg13 from "@/assets/IMG-20250908-WA0013.jpg";
+import CryptoImg14 from "@/assets/IMG-20250908-WA0014.jpg";
+import CryptoImg15 from "@/assets/IMG-20250908-WA0015.jpg";
+import CryptoImg16 from "@/assets/IMG-20250908-WA0016.jpg";
+import CryptoImg17 from "@/assets/IMG-20250908-WA0017.jpg";
+import CryptoImg18 from "@/assets/IMG-20250908-WA0018.jpg";
 
 const projects = [
   {
@@ -12,7 +33,8 @@ const projects = [
     icon: <FileText className="w-6 h-6" />,
     category: "Web Application",
     year: "2021",
-    color: "from-primary to-primary-glow"
+    color: "from-primary to-primary-glow",
+    screenshots: []
   },
   {
     id: 2,
@@ -22,7 +44,8 @@ const projects = [
     icon: <Globe className="w-6 h-6" />,
     category: "Full Stack",
     year: "2023",
-    color: "from-secondary to-secondary-glow"
+    color: "from-secondary to-secondary-glow",
+    screenshots: [ReseauSociauxImg]
   },
   {
     id: 3,
@@ -32,21 +55,37 @@ const projects = [
     icon: <Smartphone className="w-6 h-6" />,
     category: "Mobile",
     year: "2022",
-    color: "from-accent to-accent-glow"
+    color: "from-accent to-accent-glow",
+    screenshots: []
   },
   {
     id: 4,
-    title: "API REST E-commerce",
-    description: "API robuste pour plateforme e-commerce avec gestion des commandes, paiements et inventaire.",
-    technologies: ["Spring Boot", "Java", "MySQL", "REST API", "Maven"],
-    icon: <Server className="w-6 h-6" />,
-    category: "Backend",
+    title: "Application Crypto Mobile",
+    description: "Application mobile de gestion de cryptomonnaies avec suivi en temps réel, portefeuille et analyses de marché.",
+    technologies: ["React Native", "API REST", "SQLite", "JavaScript"],
+    icon: <Smartphone className="w-6 h-6" />,
+    category: "Mobile",
     year: "2023",
-    color: "from-primary to-accent"
+    color: "from-primary to-accent",
+    screenshots: [
+      CryptoImg1, CryptoImg2, CryptoImg3, CryptoImg4, CryptoImg5, CryptoImg6,
+      CryptoImg7, CryptoImg8, CryptoImg9, CryptoImg10, CryptoImg11, CryptoImg12,
+      CryptoImg13, CryptoImg14, CryptoImg15, CryptoImg16, CryptoImg17, CryptoImg18
+    ]
   }
 ];
 
 export function Projects() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentImageIndex(prev => prev + 1);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex(prev => prev - 1);
+  };
+
   return (
     <section id="projects" className="py-20 px-6">
       <div className="container mx-auto max-w-7xl">
@@ -121,15 +160,83 @@ export function Projects() {
                     </a>
                   </Button>
                   
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="flex-1 hover:shadow-glow transition-all duration-300"
-                    disabled
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Démo
-                  </Button>
+                  {project.screenshots.length > 0 ? (
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="flex-1 hover:shadow-glow transition-all duration-300"
+                          onClick={() => setCurrentImageIndex(0)}
+                        >
+                          <ImageIcon className="w-4 h-4 mr-2" />
+                          Screenshots
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle>{project.title} - Screenshots</DialogTitle>
+                        </DialogHeader>
+                        <div className="space-y-4">
+                          <div className="relative">
+                            <img
+                              src={project.screenshots[currentImageIndex]}
+                              alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                              className="w-full h-auto rounded-lg shadow-lg"
+                            />
+                            {project.screenshots.length > 1 && (
+                              <div className="flex justify-between items-center mt-4">
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  onClick={prevImage}
+                                  disabled={currentImageIndex === 0}
+                                >
+                                  Précédent
+                                </Button>
+                                <span className="text-sm text-muted-foreground">
+                                  {currentImageIndex + 1} / {project.screenshots.length}
+                                </span>
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  onClick={nextImage}
+                                  disabled={currentImageIndex === project.screenshots.length - 1}
+                                >
+                                  Suivant
+                                </Button>
+                              </div>
+                            )}
+                          </div>
+                          {project.screenshots.length > 1 && (
+                            <div className="grid grid-cols-4 gap-2 mt-4">
+                              {project.screenshots.map((screenshot, idx) => (
+                                <img
+                                  key={idx}
+                                  src={screenshot}
+                                  alt={`Thumbnail ${idx + 1}`}
+                                  className={`w-full h-20 object-cover rounded cursor-pointer transition-all ${
+                                    idx === currentImageIndex ? 'ring-2 ring-primary' : 'opacity-60 hover:opacity-100'
+                                  }`}
+                                  onClick={() => setCurrentImageIndex(idx)}
+                                />
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  ) : (
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 hover:shadow-glow transition-all duration-300"
+                      disabled
+                    >
+                      <ExternalLink className="w-4 h-4 mr-2" />
+                      Démo
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
