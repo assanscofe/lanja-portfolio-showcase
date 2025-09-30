@@ -5,7 +5,15 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, Download } from "lucide-react";
+import emailjs from '@emailjs/browser';
+
+// Initialisation d'EmailJS
+try {
+  emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY || '');
+} catch (error) {
+  console.error('Erreur lors de l\'initialisation d\'EmailJS:', error);
+}
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -20,15 +28,35 @@ export function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Envoi du formulaire via EmailJS
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || '',
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || '',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          message: formData.message,
+          to_email: 'lanjaandriatsiferana@gmail.com'
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || ''
+      );
+
       toast({
         title: "Message envoyé !",
         description: "Merci pour votre message. Je vous répondrai dans les plus brefs délais.",
       });
       setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi du message:', error);
+      toast({
+        title: "Erreur",
+        description: "Une erreur s'est produite lors de l'envoi du message. Veuillez réessayer plus tard.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -120,7 +148,24 @@ export function Contact() {
                 ))}
 
                 <div className="pt-6 border-t border-border/50">
-                  <h4 className="font-semibold mb-4">Réseaux sociaux</h4>
+                  <h4 className="font-semibold mb-4">Télécharger mon CV</h4>
+                  <Button
+                    asChild
+                    variant="outline"
+                    className="glass-effect hover:shadow-glow transition-all duration-300 hover:bg-primary/10 mb-4 w-full"
+                  >
+                    <a 
+                      href="/Modern Professional CV Resume.pdf" 
+                      download="CV_Lanja_Andriatsiferana.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Download className="w-4 h-4 mr-2" />
+                      Télécharger mon CV
+                    </a>
+                  </Button>
+                  
+                  <h4 className="font-semibold mb-4 mt-6">Réseaux sociaux</h4>
                   <div className="flex space-x-4">
                     {socialLinks.map((social, index) => (
                       <Button
