@@ -119,6 +119,26 @@ export function Projects() {
               className="glass-effect hover:shadow-strong transition-all duration-500 hover:-translate-y-2 group overflow-hidden"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
+              {/* Image d'aperçu */}
+              <div className="relative h-48 overflow-hidden">
+                {project.screenshots.length > 0 ? (
+                  <img
+                    src={project.screenshots[0]}
+                    alt={`${project.title} preview`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                ) : (
+                  <div className={`w-full h-full bg-gradient-to-br ${project.color} opacity-20`}>
+                    <div className="w-full h-full flex items-center justify-center">
+                      <div className={`p-8 rounded-full bg-gradient-to-r ${project.color} opacity-50`}>
+                        {project.icon}
+                      </div>
+                    </div>
+                  </div>
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
+              </div>
+
               <CardHeader className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div className={`p-3 rounded-lg bg-gradient-to-r ${project.color} shadow-glow`}>
