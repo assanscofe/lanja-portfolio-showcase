@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ExternalLink, Github, Smartphone, Globe, FileText, Server, Image as ImageIcon } from "lucide-react";
 import ReseauSociauxImg from "@/assets/ReseauSociaux.jpeg";
-import EcommerceImg from "@/assets/Ecommerce.PNG";
+import EcommerceImg from "@/assets/E-commerce.PNG";
 import AnimeHubImg from "@/assets/AnimeHub.PNG";
 import CryptoImg1 from "@/assets/IMG-20250908-WA0001.jpg";
 import CryptoImg3 from "@/assets/IMG-20250908-WA0003.jpg";
