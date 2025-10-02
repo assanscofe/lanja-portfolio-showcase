@@ -69,9 +69,7 @@ export function Footer() {
           {/* Copyright */}
           <div className="text-center md:text-right">
             <p className="text-sm text-muted-foreground flex items-center justify-center md:justify-end">
-              © {currentYear} Fait avec{" "}
-              <Heart className="w-4 h-4 mx-1 text-primary animate-pulse" />
-              par Lanja Nilaina
+              © {currentYear} Fait par Lanja Andriatsiferana
             </p>
           </div>
         </div>

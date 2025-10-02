@@ -22,7 +22,7 @@ export function Hero() {
             <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow mx-auto">
               <img
                 src={profilePhoto}
-                alt="Lanja Nilaina - Développeur Web & Mobile"
+                alt="Lanja Andriatsiferana - Développeur Web & Mobile"
                 className="w-full h-full object-cover"
               />
             </div>
