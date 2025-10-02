@@ -43,7 +43,6 @@ const skillCategories = [
       { name: "Spring Boot", level: "Avancé" },
       { name: "Android Studio", level: "Avancé" },
       { name: "Java Android", level: "Avancé" },
-      { name: "SQLite", level: "Avancé" }
     ]
   },
   {

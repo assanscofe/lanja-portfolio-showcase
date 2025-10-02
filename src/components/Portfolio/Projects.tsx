@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ExternalLink, Github, Smartphone, Globe, FileText, Server, Image as ImageIcon } from "lucide-react";
 import ReseauSociauxImg from "@/assets/ReseauSociaux.jpeg";
-// import EcommerceImg from "@/assets/ecommerce.png";
+import EcommerceImg from "@/assets/ecommerce.png";
 import AnimeHubImg from "@/assets/animehub.png";
 import CryptoImg1 from "@/assets/IMG-20250908-WA0001.jpg";
 import CryptoImg3 from "@/assets/IMG-20250908-WA0003.jpg";
@@ -60,7 +60,7 @@ const projects = [
     category: "Application Web",
     year: "2024",
     color: "from-secondary to-secondary-glow",
-    screenshots: [], // Temporarily removed: [EcommerceImg],
+        screenshots: [EcommerceImg],
     liveUrl: "https://sleek-product-list.vercel.app/"
   },
   {
