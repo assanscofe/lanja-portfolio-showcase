@@ -60,7 +60,7 @@ const projects = [
     category: "Application Web",
     year: "2024",
     color: "from-secondary to-secondary-glow",
-        screenshots: [EcommerceImg],
+    screenshots: [EcommerceImg],
     liveUrl: "https://sleek-product-list.vercel.app/"
   },
   {
@@ -73,11 +73,12 @@ const projects = [
     year: "2023",
     color: "from-secondary to-accent",
     screenshots: [
-      CryptoImg9, CryptoImg18, CryptoImg16, CryptoImg13, CryptoImg1, CryptoImg3, 
-      CryptoImg11, CryptoImg14, CryptoImg17, CryptoImg10, CryptoImg7, 
-      WhatsAppImg1, WhatsAppImg2, CryptoImg12, CryptoImg6, CryptoImg4, 
+      CryptoImg3, CryptoImg9, CryptoImg18, CryptoImg16, CryptoImg13, CryptoImg1,
+      CryptoImg11, CryptoImg14, CryptoImg17, CryptoImg10, CryptoImg7,
+      WhatsAppImg1, WhatsAppImg2, CryptoImg12, CryptoImg6, CryptoImg4,
       CryptoImg15, CryptoImg10, CryptoImg8
-    ]
+    ],
+    isMobile: true
   }
 ];
 
@@ -110,16 +111,15 @@ export function Projects() {
           {projects.map((project, index) => (
             <Card 
               key={project.id}
-              className="glass-effect hover:shadow-strong transition-all duration-500 hover:-translate-y-2 group overflow-hidden"
+              className="glass-effect hover:shadow-strong transition-all duration-500 hover:-translate-y-2 group overflow-hidden flex flex-col"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Image d'aperçu */}
               <div className="relative h-48 overflow-hidden">
                 {project.screenshots.length > 0 ? (
                   <img
                     src={project.screenshots[0]}
                     alt={`${project.title} preview`}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${project.isMobile ? 'object-contain' : 'object-cover'}`}
                   />
                 ) : (
                   <div className={`w-full h-full bg-gradient-to-br ${project.color} opacity-20`}>
@@ -153,8 +153,8 @@ export function Projects() {
                 </div>
               </CardHeader>
 
-              <CardContent className="space-y-6">
-                <p className="text-muted-foreground leading-relaxed">
+              <CardContent className="space-y-6 flex-grow flex flex-col">
+                <p className="text-muted-foreground leading-relaxed flex-grow">
                   {project.description}
                 </p>
 
@@ -173,7 +173,7 @@ export function Projects() {
                   </div>
                 </div>
 
-                <div className="flex gap-2 pt-4">
+                <div className="flex flex-wrap gap-2 pt-4">
                   <Button
                     variant="outline"
                     size="sm"
@@ -199,18 +199,20 @@ export function Projects() {
                           Screenshots
                         </Button>
                       </DialogTrigger>
-                      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+                      <DialogContent className="max-w-4xl max-h-[90vh] flex flex-col">
                         <DialogHeader>
                           <DialogTitle>{project.title} - Screenshots</DialogTitle>
                         </DialogHeader>
-                        <div className="space-y-4">
-                          <div className="relative">
+                        <div className="space-y-4 flex-grow flex flex-col min-h-0">
+                          <div className="relative flex-grow flex items-center justify-center">
                             <img
                               src={project.screenshots[currentImageIndex]}
                               alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-                              className="w-full h-auto rounded-lg shadow-lg"
+                              className={`rounded-lg shadow-lg ${project.isMobile ? 'max-h-full object-contain' : 'w-full h-auto'}`}
                             />
-                            {project.screenshots.length > 1 && (
+                          </div>
+                          {project.screenshots.length > 1 && (
+                            <div>
                               <div className="flex justify-between items-center mt-4">
                                 <Button
                                   variant="outline"
@@ -232,21 +234,18 @@ export function Projects() {
                                   Suivant
                                 </Button>
                               </div>
-                            )}
-                          </div>
-                          {project.screenshots.length > 1 && (
-                            <div className="grid grid-cols-4 gap-2 mt-4">
-                              {project.screenshots.map((screenshot, idx) => (
-                                <img
-                                  key={idx}
-                                  src={screenshot}
-                                  alt={`Thumbnail ${idx + 1}`}
-                                  className={`w-full h-20 object-cover rounded cursor-pointer transition-all ${
-                                    idx === currentImageIndex ? 'ring-2 ring-primary' : 'opacity-60 hover:opacity-100'
-                                  }`}
-                                  onClick={() => setCurrentImageIndex(idx)}
-                                />
-                              ))}
+                              <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2 mt-4">
+                                {project.screenshots.map((screenshot, idx) => (
+                                  <div key={idx} className="aspect-w-1 aspect-h-1">
+                                    <img
+                                      src={screenshot}
+                                      alt={`Thumbnail ${idx + 1}`}
+                                      className={`w-full h-full rounded cursor-pointer transition-all ${project.isMobile ? 'object-contain' : 'object-cover'} ${idx === currentImageIndex ? 'ring-2 ring-primary' : 'opacity-60 hover:opacity-100'}`}
+                                      onClick={() => setCurrentImageIndex(idx)}
+                                    />
+                                  </div>
+                                ))}
+                              </div>
                             </div>
                           )}
                         </div>
@@ -254,7 +253,7 @@ export function Projects() {
                     </Dialog>
                   )}
                   
-                  {project.liveUrl ? (
+                  {project.liveUrl && (
                     <Button
                       variant="outline"
                       size="sm"
@@ -265,16 +264,6 @@ export function Projects() {
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Voir le site
                       </a>
-                    </Button>
-                  ) : (
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="flex-1 hover:shadow-glow transition-all duration-300"
-                      disabled
-                    >
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Démo
                     </Button>
                   )}
                 </div>
@@ -299,4 +288,4 @@ export function Projects() {
       </div>
     </section>
   );
-}
+}         
