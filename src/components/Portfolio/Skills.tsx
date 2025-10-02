@@ -12,18 +12,6 @@ import {
 
 const skillCategories = [
   {
-    title: "Langages",
-    icon: <Code2 className="w-6 h-6" />,
-    color: "from-primary to-primary-glow",
-    skills: [
-      { name: "JavaScript", level: "Avancé" },
-      { name: "PHP", level: "Avancé" },
-      { name: "Java", level: "Avancé" },
-      { name: "HTML5/CSS3", level: "Expert" },
-      { name: "SQL", level: "Avancé" }
-    ]
-  },
-  {
     title: "Frontend",
     icon: <Globe className="w-6 h-6" />,
     color: "from-secondary to-secondary-glow",
@@ -32,7 +20,6 @@ const skillCategories = [
       { name: "JavaScript", level: "Avancé" },
       { name: "HTML5/CSS3", level: "Expert" },
       { name: "Bootstrap", level: "Avancé" },
-      { name: "Responsive Design", level: "Avancé" }
     ]
   },
   {
@@ -40,11 +27,11 @@ const skillCategories = [
     icon: <Server className="w-6 h-6" />,
     color: "from-accent to-accent-glow",
     skills: [
+      { name: "PHP", level: "Avancé" },
       { name: "Laravel", level: "Avancé" },
       { name: "CodeIgniter", level: "Avancé" },
-      { name: "Spring Boot", level: "Avancé" },
+      { name: "Django", level: "Débutant" },
       { name: "REST API", level: "Avancé" },
-      { name: "Thymeleaf", level: "Intermédiaire" }
     ]
   },
   {
@@ -53,6 +40,7 @@ const skillCategories = [
     color: "from-primary to-secondary",
     skills: [
       { name: "React Native", level: "Avancé" },
+      { name: "Spring Boot", level: "Avancé" },
       { name: "Android Studio", level: "Avancé" },
       { name: "Java Android", level: "Avancé" },
       { name: "SQLite", level: "Avancé" }
@@ -77,7 +65,6 @@ const skillCategories = [
       { name: "Git/GitHub", level: "Avancé" },
       { name: "VS Code", level: "Expert" },
       { name: "Android Studio", level: "Avancé" },
-      { name: "Maven", level: "Intermédiaire" },
       { name: "Postman", level: "Avancé" }
     ]
   }

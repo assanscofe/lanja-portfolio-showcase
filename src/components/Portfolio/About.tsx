@@ -42,7 +42,7 @@ export function About() {
                 className="bg-gradient-primary hover:shadow-glow transition-all duration-300"
                 asChild
               >
-                <a href="/CvTest.pdf" download="CV_Lanja_Andriatsiferana.pdf">
+                <a href="/CV_Lanja_Andriatsiferana.pdf" download="CV_Lanja_Andriatsiferana.pdf">
                   <Download className="w-5 h-5 mr-2" />
                   Télécharger mon CV
                 </a>
@@ -62,7 +62,7 @@ export function About() {
             </div>
 
             {/* Quick Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-border/50">
+            {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-8 border-t border-border/50">
               <div className="text-center">
                 <div className="text-3xl font-bold gradient-text">6+</div>
                 <div className="text-sm text-muted-foreground">Projets réalisés</div>
@@ -77,7 +77,7 @@ export function About() {
                 <div className="text-3xl font-bold gradient-text">5+</div>
                 <div className="text-sm text-muted-foreground">Technologies maîtrisées</div>
               </div>
-            </div>
+            </div> */}
           </div>
         </Card>
       </div>

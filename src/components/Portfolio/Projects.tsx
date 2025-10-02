@@ -5,11 +5,11 @@ import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ExternalLink, Github, Smartphone, Globe, FileText, Server, Image as ImageIcon } from "lucide-react";
 import ReseauSociauxImg from "@/assets/ReseauSociaux.jpeg";
+import EcommerceImg from "@/assets/Ecommerce.png";
+import AnimeHubImg from "@/assets/AnimeHub.png";
 import CryptoImg1 from "@/assets/IMG-20250908-WA0001.jpg";
-import CryptoImg2 from "@/assets/IMG-20250908-WA0002.jpg";
 import CryptoImg3 from "@/assets/IMG-20250908-WA0003.jpg";
 import CryptoImg4 from "@/assets/IMG-20250908-WA0004.jpg";
-import CryptoImg5 from "@/assets/IMG-20250908-WA0005.jpg";
 import CryptoImg6 from "@/assets/IMG-20250908-WA0006.jpg";
 import CryptoImg7 from "@/assets/IMG-20250908-WA0007.jpg";
 import CryptoImg8 from "@/assets/IMG-20250908-WA0008.jpg";
@@ -23,66 +23,60 @@ import CryptoImg15 from "@/assets/IMG-20250908-WA0015.jpg";
 import CryptoImg16 from "@/assets/IMG-20250908-WA0016.jpg";
 import CryptoImg17 from "@/assets/IMG-20250908-WA0017.jpg";
 import CryptoImg18 from "@/assets/IMG-20250908-WA0018.jpg";
+import WhatsAppImg1 from "@/assets/WhatsApp Image 2025-09-08 à 00.59.02_565790c8.jpg";
+import WhatsAppImg2 from "@/assets/WhatsApp Image 2025-09-08 à 00.59.02_3b516e22.jpg";
 
 const projects = [
   {
     id: 1,
+    title: "D-versity",
+    description: "Plateforme de réseau social axée sur le partage de passions, les interactions en temps réel et un design responsive.",
+    technologies: ["React.js", "Django", "REST API", "PostgreSQL", "JavaScript"],
+    icon: <Globe className="w-6 h-6" />,
+    category: "Application Web",
+    year: "2023",
+    color: "from-accent to-accent-glow",
+    screenshots: [ReseauSociauxImg], 
+    liveUrl: "https://front-d-versity.vercel.app/signin"
+  },
+  {
+    id: 2,
     title: "Anime Sparkle",
     description: "Application web moderne de découverte d'animés avec recherche avancée, système de favoris et interface utilisateur élégante.",
     technologies: ["React.js", "TypeScript", "API REST", "Tailwind CSS"],
     icon: <Globe className="w-6 h-6" />,
-    category: "Web Application",
+    category: "Application Web",
     year: "2024",
     color: "from-primary to-primary-glow",
-    screenshots: [],
+    screenshots: [AnimeHubImg],
     liveUrl: "https://anime-sparkle.vercel.app/"
   },
   {
-    id: 2,
-    title: "Système de Gestion des Procédures",
-    description: "Application web complète pour la gestion et le suivi des dossiers administratifs au Ministère avec interface moderne.",
-    technologies: ["Spring Boot", "Java", "PostgreSQL", "Thymeleaf", "HTML/CSS"],
-    icon: <FileText className="w-6 h-6" />,
-    category: "Web Application",
-    year: "2021",
-    color: "from-secondary to-secondary-glow",
-    screenshots: []
-  },
-  {
     id: 3,
-    title: "Réseau Social Web",
-    description: "Plateforme sociale moderne avec fonctionnalités de partage, interactions en temps réel et design responsive.",
-    technologies: ["React.js", "Django", "REST API", "PostgreSQL", "JavaScript"],
+    title: "ShopEasy",
+    description: "Site e-commerce moderne avec interface utilisateur élégante, gestion de produits et panier d'achat interactif.",
+    technologies: ["React.js", "TypeScript", "Tailwind CSS", "JavaScript", "API REST"],
     icon: <Globe className="w-6 h-6" />,
-    category: "Full Stack",
-    year: "2023",
-    color: "from-accent to-accent-glow",
-    screenshots: [ReseauSociauxImg]
+    category: "Application Web",
+    year: "2024",
+    color: "from-secondary to-secondary-glow",
+    screenshots: [EcommerceImg],
+    liveUrl: "https://sleek-product-list.vercel.app/"
   },
   {
     id: 4,
-    title: "Application Mobile de Gestion",
-    description: "Application mobile cross-platform pour la gestion de données avec interface intuitive et synchronisation.",
-    technologies: ["React Native", "SQLite", "Android Studio", "JavaScript"],
+    title: "Crypto Volanakà",
+    description: "Application mobile sécurisée de gestion et de transactions en cryptomonnaie Volanakà, intégrant un portefeuille numérique, le suivi des opérations en temps réel.",
+    technologies: ["React Native","Rust/Anchor","Spring Boot", "API REST", "MySQL"],
     icon: <Smartphone className="w-6 h-6" />,
-    category: "Mobile",
-    year: "2022",
-    color: "from-primary to-accent",
-    screenshots: []
-  },
-  {
-    id: 5,
-    title: "Application Crypto Mobile",
-    description: "Application mobile de gestion de cryptomonnaies avec suivi en temps réel, portefeuille et analyses de marché.",
-    technologies: ["React Native", "API REST", "SQLite", "JavaScript"],
-    icon: <Smartphone className="w-6 h-6" />,
-    category: "Mobile",
+    category: "Application Mobile",
     year: "2023",
     color: "from-secondary to-accent",
     screenshots: [
-      CryptoImg1, CryptoImg2, CryptoImg3, CryptoImg4, CryptoImg5, CryptoImg6,
-      CryptoImg7, CryptoImg8, CryptoImg9, CryptoImg10, CryptoImg11, CryptoImg12,
-      CryptoImg13, CryptoImg14, CryptoImg15, CryptoImg16, CryptoImg17, CryptoImg18
+      CryptoImg9, CryptoImg18, CryptoImg16, CryptoImg13, CryptoImg1, CryptoImg3, 
+      CryptoImg11, CryptoImg14, CryptoImg17, CryptoImg10, CryptoImg7, 
+      WhatsAppImg1, WhatsAppImg2, CryptoImg12, CryptoImg6, CryptoImg4, 
+      CryptoImg15, CryptoImg10, CryptoImg8
     ]
   }
 ];
@@ -192,7 +186,7 @@ export function Projects() {
                     </a>
                   </Button>
                   
-                  {project.screenshots.length > 0 ? (
+                  {project.screenshots.length > 0 && (
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button
@@ -258,7 +252,9 @@ export function Projects() {
                         </div>
                       </DialogContent>
                     </Dialog>
-                  ) : project.liveUrl ? (
+                  )}
+                  
+                  {project.liveUrl ? (
                     <Button
                       variant="outline"
                       size="sm"

@@ -33,7 +33,7 @@ export function Hero() {
           <div className="space-y-4">
             <h1 className="text-5xl md:text-7xl font-bold">
               <span className="gradient-text">Lanja</span>{" "}
-              <span className="text-foreground">Nilaina</span>
+              <span className="text-foreground">Andriatsiferana</span>
             </h1>
             <h2 className="text-xl md:text-2xl text-muted-foreground font-medium">
               Développeur Web & Mobile – Full Stack
