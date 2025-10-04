@@ -19,15 +19,14 @@ export function Hero() {
         <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
           {/* Profile Photo */}
           <div className="relative inline-block">
-            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/30 shadow-glow mx-auto">
+            <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-primary/30 mx-auto">
               <img
                 src={profilePhoto}
                 alt="Lanja Andriatsiferana - Développeur Web & Mobile"
                 className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -inset-1 bg-gradient-primary rounded-full blur opacity-30 animate-pulse"></div>
-          </div>
+                      </div>
 
           {/* Name and Title */}
           <div className="space-y-4">
